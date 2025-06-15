@@ -5,7 +5,14 @@ BASE_DIR = Path(__file__).parent
 FILENAME = BASE_DIR / "menu.json"
 
 
+def ensure_data_file():
+    if not FILENAME.exists():
+        from app.scraper import main
+        main()
+
+
 def load_products(filename=FILENAME):
+    ensure_data_file()
     with open(filename, "r", encoding="utf-8") as f:
         return json.load(f)
 

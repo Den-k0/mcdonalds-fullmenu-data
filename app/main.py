@@ -1,9 +1,8 @@
-import json
 from enum import Enum
 
 from fastapi import FastAPI, HTTPException
 
-app = FastAPI()
+from app.data_loader import load_products
 
 
 class ProductField(str, Enum):
@@ -19,8 +18,9 @@ class ProductField(str, Enum):
     portion = "portion"
 
 
-with open("menu.json", "r", encoding="utf-8") as f:
-    products_data = json.load(f)
+app = FastAPI()
+
+products_data = load_products()
 
 
 @app.get("/all_products/")

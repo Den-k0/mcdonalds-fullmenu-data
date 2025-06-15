@@ -1,7 +1,7 @@
-import json
-
 import requests
 from bs4 import BeautifulSoup
+
+from app.data_loader import save_products
 
 HOME_URL = "https://www.mcdonalds.com/ua/uk-ua/eat/fullmenu.html"
 PRODUCT_URL = ("https://www.mcdonalds.com/dnaapp/itemDetails?"
@@ -49,11 +49,6 @@ def get_menu_products():
     return [parse_single_product(product_id) for product_id in products_id]
 
 
-def save_to_json(data, filename="menu.json"):
-    with open(filename, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-
 def main():
     menu = get_menu_products()
-    save_to_json(menu)
+    save_products(menu)

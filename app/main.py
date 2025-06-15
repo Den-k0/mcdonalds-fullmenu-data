@@ -42,5 +42,7 @@ def get_product_field(product_name: str, product_field: ProductField):
         if product["name"].lower() == product_name.lower():
             if product_field.value in product:
                 return {product_field.value: product[product_field.value]}
-            raise HTTPException(status_code=404, detail="Field not found in product")
+            raise HTTPException(
+                status_code=404, detail="Field not found in product"
+            )
     raise HTTPException(status_code=404, detail="Product not found")

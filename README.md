@@ -10,7 +10,7 @@ This project collects data about the full menu of McDonald's using web scraping 
 ## Installation
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/mcdonalds-fullmenu-data.git
+git clone https://github.com/Den-k0/mcdonalds-fullmenu-data.git
 cd mcdonalds-fullmenu-data
 ```
    

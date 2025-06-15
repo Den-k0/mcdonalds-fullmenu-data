@@ -14,23 +14,18 @@ git clone https://github.com/Den-k0/mcdonalds-fullmenu-data.git
 cd mcdonalds-fullmenu-data
 ```
    
-2. Activate the virtual environment:
+2. Activate the virtual environment and nstall required dependencies:
 ```
-poetry install
-poetry shell
-```
-3. Install required dependencies:
-```
-poetry install
+poetry install --no-root
 ```
 
 ## Running Locally
 Start the FastAPI server:
 ```bash
-uvicorn app.main:app --reload
+poetry run uvicorn app.main:app --reload
 ```
 
-The API will be available at:
+The API docs will be available at:
 ```
-http://127.0.0.1:8000
+http://127.0.0.1:8000/docs
 ```
